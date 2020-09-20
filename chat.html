@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Application</title>
+  <link rel="stylesheet" href="chat.css">
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-database.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyBff8gFVpK9ZXlA5NnPwOYDX5fEgQPhuKE",
+      authDomain: "chatapp56-8fddb.firebaseapp.com",
+      databaseURL: "https://chatapp56-8fddb.firebaseio.com",
+      projectId: "chatapp56-8fddb",
+      storageBucket: "chatapp56-8fddb.appspot.com",
+      messagingSenderId: "678026759886",
+      appId: "1:678026759886:web:89b8174a2ae3e615450a9f",
+      measurementId: "G-JLHLKTGGJG"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+
+</head>
+
+<body style="overflow: hidden;">
+
+<!-- Loading Spinner Wrapper-->
+<div class="loader text-center" id="loader">
+  <div class="loader-inner">
+
+      <!-- Animated Spinner -->
+      <div class="lds-roller mb-3">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+      
+      <!-- Spinner Description Text [For Demo Purpose]-->
+      <h4 class="text-uppercase font-weight-bold">Loading</h4>
+      <p class="font-italic text-muted">This loading window will be removed after <strong class=" text-dark font-weight-bold" id="countdown">5</strong> Seconds</p>
+  </div>
+</div>
+
+
+  <div id="contents" class>
+    <div  class="pl-2 py-2" >
+          <h3 id="welcome"></h3>
+          <p id="loginId"></p>
+    </div>
+
+    <div id="scroll_message"  class="ml-2">
+      <ul class="list-unstyled" id="messages"></ul>
+    </div>
+
+    <div>
+      <form onSubmit="return sendMessage();" id="footer" class=" mb-2 ">
+        <div class="row mx-1">
+          <div class="col-10 px-1">
+            <input id="message" placeholder="Enter Message" autocomplete="off" required>
+          </div>
+
+          <div class="col-2 px-1">
+            <input type="submit" id="submit" class="btn btn-outline-danger" value="Send"></button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="chat.js"></script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+
+
+</body>
+
+</html>
