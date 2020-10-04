@@ -44,3 +44,43 @@ let loginwithemail = ()=>{
        // ...
      });
 }
+
+let loginwithgoogle = ()=>{
+
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        alert("user login succesfully")
+        console.log(user)
+        window.name = user.email
+        location.href = "chat.html"
+        // ...
+      }).catch(function(error) {
+
+          alert(error);
+        
+      });
+}
+
+   let loginwithfacebook = ()=>{
+    var provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        alert("user login succesfully")
+        console.log(user)
+        window.name = user.email
+        location.href = "chat.html"
+
+        // ...
+      }).catch(function(error) {
+          alert(error)
+       
+      });
+   }
+

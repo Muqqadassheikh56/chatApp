@@ -42,6 +42,7 @@ function sendMessage(){
     return false;
 }
 
+
 firebase.database().ref("message").on("child_added" , function(snapshot){
 
     var html = "";
